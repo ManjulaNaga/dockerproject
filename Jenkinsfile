@@ -16,6 +16,15 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
+        stage('Example Test') {
+    		when{
+		     not{
+			 branch "master"
+			}
+		}
+		steps {
+                	echo 'Hello, JDK'
+            	}
         }
     }
 }
