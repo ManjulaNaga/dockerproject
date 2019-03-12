@@ -7,9 +7,14 @@ pipeline {
             }
         }
         stage('Example Test') {
-            steps {
-                echo 'Hello, JDK'
-            }
+    		when{
+		     not{
+			 branch "master"
+			}
+		}
+		steps {
+                	echo 'Hello, JDK'
+            	}
         }
     }
 }
